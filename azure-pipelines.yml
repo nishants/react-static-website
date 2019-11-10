@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- script: |
+    cd projects/react-static-website
+    yarn
+  displayName: 'install node modules'
+
+- script: |
+    cd projects/react-static-website
+    yarn lint
+  displayName: 'run lint'
+
+- script: |
+    cd projects/react-static-website
+    yarn build
+  displayName: 'build artifacts'
+
+- script: |
+    pwd
+    ls
+  displayName: 'check if retains the dir from last script'
