@@ -11,20 +11,17 @@ jobs:
   - job: buildAssets
     steps:
     - script: yarn 
-      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
       displayName: 'Installing node modules'
 
     - script: yarn lint
-      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
       displayName: 'Checking for lint errors'
 
     - script: |
         yarn build
-      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
       displayName: 'Running webpack build'
 
     # Save artifacts to refer them in release builds
     - task: PublishPipelineArtifact@1
       inputs:
-        path: $(Agent.BuildDirectory)/s/projects/react-static-website/build
+        path: $(Agent.BuildDirectory)/s/build
         artifact: react-static-website-build-artifacts
