@@ -7,21 +7,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 #  Build steps for the pipeline
-jobs: 
-  - job: buildAssets
-    steps:
-    - script: yarn 
-      displayName: 'Installing node modules'
+steps:
+- script: yarn 
+  displayName: 'Installing node modules'
 
-    - script: yarn lint
-      displayName: 'Checking for lint errors'
+- script: yarn lint
+  displayName: 'Checking for lint errors'
 
-    - script: |
-        yarn build
-      displayName: 'Running webpack build'
+- script: |
+    yarn build
+  displayName: 'Running webpack build'
 
-    # Save artifacts to refer them in release builds
-    - task: PublishPipelineArtifact@1
-      inputs:
-        path: $(Agent.BuildDirectory)/s/build
-        artifact: react-static-website-build-artifacts
+# Save artifacts to refer them in release builds
+- task: PublishPipelineArtifact@1
+  inputs:
+    path: $(Agent.BuildDirectory)/s/build
+    artifact: react-static-website-build-artifacts
