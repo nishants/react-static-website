@@ -4,12 +4,12 @@
 
 3. Create an organization
 
-   ![image-20191108214527100](images/create-organization.png)
+   ![image-20191108214527100](doc/images/create-organization.png)
 
    
 
 4. Create a project
-  ![image-20191108214637075](images/create-project.png)
+  ![image-20191108214637075](doc/images/create-project.png)
 
 
 
@@ -20,7 +20,7 @@
 
 6. Choose github as source code repository 
 
-   ![image-20191108215015138](images/choose-source-repo.png)
+   ![image-20191108215015138](doc/images/choose-source-repo.png)
 
  
 
@@ -28,13 +28,13 @@
 
 8. Choose the starter pipeline for configuration options
 
-   ![image-20191108215301965](images/starter-pipeline.png) 
+   ![image-20191108215301965](doc/images/starter-pipeline.png) 
 
 
 
 9. Now we can edit teh starter pipeline boilerplate
 
-   ![image-20191108215355000](images/stater-pipeline-boilerplate.png)
+   ![image-20191108215355000](doc/images/stater-pipeline-boilerplate.png)
 
 
 
@@ -78,7 +78,7 @@
    
 11. Select the yaml path in repository, this will be saved in repo on commit 
 
-    ![image-20191108220006270](images/set-build-yaml-path.png)
+    ![image-20191108220006270](doc/images/set-build-yaml-path.png)
 
 
 
@@ -108,7 +108,7 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Now after the build is run, open the build result, we will see an option to view/download artifacts : 
 
-  ![image-20191110115958567](images/download-artifacts.png)
+  ![image-20191110115958567](doc/images/download-artifacts.png)
 
 
 
@@ -119,7 +119,7 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 ### Create release pipeline
 
 - Go to release tab and click on **New Pipeline**
-- ![image-20191110154011530](images/create-release-pipeline.png)
+- ![image-20191110154011530](doc/images/create-release-pipeline.png)
 
 
 
@@ -129,13 +129,13 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - **Choose the build from dropdown** to get the artifacts from
 
-  ![image-20191110154310776](images/choose-artifacts-build-create-release-pipeline.png)
+  ![image-20191110154310776](doc/images/choose-artifacts-build-create-release-pipeline.png)
 
 
 
 - Click on add and now we will see the build pipeline as : 
 
-  ![image-20191110154547260](images/added-artificats-create-release-pipeline.png)
+  ![image-20191110154547260](doc/images/added-artificats-create-release-pipeline.png)
 
 
 
@@ -147,13 +147,13 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Choose empty job and click on **Apply**
 
-  ![image-20191110154818151](images/create-stage-empty.png)
+  ![image-20191110154818151](doc/images/create-stage-empty.png)
 
 
 
 - Choose name of the stage and click on close button of stage dialogue 
 
-  ![image-20191110154937460](images/set-stage-name.png)
+  ![image-20191110154937460](doc/images/set-stage-name.png)
 
 
 
@@ -161,25 +161,25 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Click on '1 job, 0 task' to add a task to the stage
 
-  ![image-20191110155122013](images/add-task-to-release-job.png)
+  ![image-20191110155122013](doc/images/add-task-to-release-job.png)
 
 
 
 - Click the **+** icon on the agent job to create a task
 
-  ![image-20191110155350673](images/add-release-job-task.png)
+  ![image-20191110155350673](doc/images/add-release-job-task.png)
 
 
 
 - Search for "Azure file copy" for available azure tasks:
 
-	![image-20191110155505798](images/stoage-task-for-release.png)
+	![image-20191110155505798](doc/images/stoage-task-for-release.png)
 
 
 
 - Click on newly created task **File Copy** to start editing it
 
-  ![image-20191110160640110](images/edit-file-copy-task.png)
+  ![image-20191110160640110](doc/images/edit-file-copy-task.png)
 
 
 
@@ -191,13 +191,13 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
   - select the **react-static-website-build-artifacts** (we create this in our build )
 
-  ![image-20191110161155235](images/chose-copy-file-artifacts.png)
+  ![image-20191110161155235](doc/images/chose-copy-file-artifacts.png)
 
 
 
 - Choose free trial from available **Azure subscription** dropdown
 
-  ![image-20191110161403652](images/select-file-task-azure-subscription-dropdown.png)
+  ![image-20191110161403652](doc/images/select-file-task-azure-subscription-dropdown.png)
 
 
 
@@ -211,13 +211,13 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Select **Destination Type** from dropdown as **staticwebsiteazure** (our dev server)
 - In container name, enter **$web**
-- ![image-20191110161844446](images/select-container-destination-name-copy-task.png)
+- ![image-20191110161844446](doc/images/select-container-destination-name-copy-task.png)
 
 
 
 - Click on save button to save the create build task
 
-  ![image-20191110162039502](images/save-release-to-dev-file-copy-task.png)
+  ![image-20191110162039502](doc/images/save-release-to-dev-file-copy-task.png)
 
 
 
@@ -229,13 +229,13 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Click on **trigger icon** over the artifacts: 
 
-  ![image-20191110162948752](images/continuous-deployment-trigger.png)
+  ![image-20191110162948752](doc/images/continuous-deployment-trigger.png)
 
 
 
 - Click on enabled in the dialogue 
 
-  ![image-20191110163108484](images/enable-continuous-deployment-trigger.png)
+  ![image-20191110163108484](doc/images/enable-continuous-deployment-trigger.png)
 
 
 
@@ -245,7 +245,7 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - now click on close on top of dialog
 
-  ![image-20191110163339448](images/select-branch-for-continuous-deployment-trigger.png)
+  ![image-20191110163339448](doc/images/select-branch-for-continuous-deployment-trigger.png)
 
   
 
@@ -253,11 +253,11 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - Click on the **Save** on top right to save the new trigger
 
-![image-20191110163603892](images/save-continuous-deployment-trigger.png)
+![image-20191110163603892](doc/images/save-continuous-deployment-trigger.png)
 
 
 
-​	![image-20191110163647355](images/save-comment-continuous-deployment-trigger.png)
+​	![image-20191110163647355](doc/images/save-comment-continuous-deployment-trigger.png)
 
 
 
@@ -266,7 +266,7 @@ Define work directory for all steps : https://github.com/MicrosoftDocs/vsts-docs
 
 - If the build fails chech if there resource access requires authorization, click on **Authorize Resource ** and build again
 
-![image-20191110121232065](images/authorize-services-connection-for-resources.png)
+![image-20191110121232065](doc/images/authorize-services-connection-for-resources.png)
 
 
 
